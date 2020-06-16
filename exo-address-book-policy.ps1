@@ -6,7 +6,7 @@ New-AddressList -Name "AL-EDU-Rooms" -RecipientFilter {((Alias -ne $null) -and (
 
 New-GlobalAddressList -Name "GAL-EDU" -RecipientFilter {(CustomAttribute5 -eq "EDU")}
 
-New-OfflineAddressBook -Name "OAB-EDU" -AddressLists "GAL-EDU"
+New-OfflineAddressBook -Name "OAB-EDU" -AddressLists "AL-EDU-Users-DGs"
 
 New-AddressBookPolicy -Name "ABP-EDU" -AddressLists "AL-EDU-Users-DGs","AL-EDU-Rooms" -OfflineAddressBook "\OAB-EDU" -GlobalAddressList "\GAL-EDU" -RoomList "\AL-EDU-Rooms"
 

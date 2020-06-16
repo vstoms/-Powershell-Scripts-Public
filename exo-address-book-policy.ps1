@@ -1,4 +1,4 @@
-# Configuration for students and teachers:
+# Configuration for students:
 
 New-AddressList -Name "AL-EDU-Users-DGs" -RecipientFilter {((RecipientTypeDetails -eq 'UserMailbox') -or (RecipientTypeDetails -eq "MailUniversalDistributionGroup") -or (RecipientTypeDetails -eq "DynamicDistributionGroup")) -and (CustomAttribute5 -eq "EDU")}
 

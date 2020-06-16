@@ -32,6 +32,6 @@ Get-Mailbox | Where {$_.CustomAttribute1 -eq "Employee"}  | Set-Mailbox -Address
 
 # Configuration for teachers (“Everyone”):
 
-New-AddressBookPolicy -Name "ABP-Teachers" -AddressLists "AL-ADM-Users-DGs","AL-ADM-Rooms","AL-EDU-Users-DGs","AL-EDU-Rooms","All Groups","All Contacts","All Distribution Lists","All Rooms","All Users" -OfflineAddressBook "\Default Offline Address Book" -GlobalAddressList "\Default Global Address List" -RoomList "\All Rooms"
+New-AddressBookPolicy -Name "ABP-Teachers" -AddressLists "All Groups","All Contacts","All Distribution Lists","All Rooms","All Users" -OfflineAddressBook "\Default Offline Address Book" -GlobalAddressList "\Default Global Address List" -RoomList "\All Rooms"
 
-Get-Mailbox | Where {$_.CustomAttribute6 -eq “teachers”} | Set-Mailbox -AddressBookPolicy "ABP-Teachers"
+Get-Mailbox | Where {$_.CustomAttribute2 -eq “Faculty”} | Set-Mailbox -AddressBookPolicy "ABP-Teachers"

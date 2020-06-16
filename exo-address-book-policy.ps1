@@ -1,4 +1,4 @@
-Configuration for students and teachers:
+# Configuration for students and teachers:
 
 New-AddressList -Name "AL-EDU-Users-DGs" -RecipientFilter {((RecipientTypeDetails -eq 'UserMailbox') -or (RecipientTypeDetails -eq "MailUniversalDistributionGroup") -or (RecipientTypeDetails -eq "DynamicDistributionGroup")) -and (CustomAttribute5 -eq "EDU")}
 
@@ -14,7 +14,7 @@ Get-Mailbox | Where {$_.CustomAttribute5 -eq "EDU"} | Set-Mailbox -AddressBookPo
 
 
 
-Configuration for administrator personnel, managers and teachers:
+# Configuration for administrator personnel, managers and teachers:
 
 New-AddressList -Name "AL-ADM-Users-DGs" -RecipientFilter {((RecipientTypeDetails -eq 'UserMailbox') -or (RecipientType -eq "MailUniversalDistributionGroup") -or (RecipientType -eq "DynamicDistributionGroup")) -and (CustomAttribute5 -eq "ADM")}
 
@@ -30,7 +30,7 @@ Get-Mailbox | Where {$_.CustomAttribute5 -eq "ADM"}  | Set-Mailbox -AddressBookP
 
 
 
-Configuration for teachers (“Everyone”):
+# Configuration for teachers (“Everyone”):
 
 New-AddressBookPolicy -Name "ABP-Teachers" -AddressLists "AL-ADM-Users-DGs","AL-ADM-Rooms","AL-EDU-Users-DGs","AL-EDU-Rooms","All Groups","All Contacts","All Distribution Lists","All Rooms","All Users" -OfflineAddressBook "\Default Offline Address Book" -GlobalAddressList "\Default Global Address List" -RoomList "\All Rooms"
 
